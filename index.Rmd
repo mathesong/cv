@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Granville Matheson's CV"
+author: Granville Matheson
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -18,17 +18,47 @@ knitr::opts_chunk$set(
 library(glue)
 library(tidyverse)
 
-# Set this to true to have links turned into footnotes at the end of the document
-PDF_EXPORT <- FALSE
+# ======================================================================
+# These variables determine how the the data is loaded and how the exports are
+# done.
 
-# Holds all the links that were inserted for placement at the end
+# Is data stored in google sheets? If no data will be gather from the csvs/
+# folder in project
+using_googlesheets <- TRUE
+
+# Just the copied URL from the sheet
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1w-hCKEtLSVBLHNbSlpUAfLkDN65XvrF8A50J-NgaE2Q"
+
+# Is this sheet available for anyone to read? If you're using a private sheet
+# set this to false and go to gather_data.R and run the data loading manually
+# once to cache authentication
+sheet_is_publicly_readable <- TRUE
+
+# Is the goal of this knit to build a document that is exported to PDF? If so
+# set this to true to have links turned into footnotes at the end of the
+# document
+PDF_EXPORT <- TRUE
+
+
+CV_PDF_LOC <- "https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf"
+CV_HTML_LOC <- "nickstrayer.me/cv/"
+
+
+# A global (gasp) variable that holds all the links that were inserted for
+# placement at the end
 links <- c()
 
-source('parsing_functions.R')
+# ======================================================================
+# Now we source two external scripts. One contains functions for building the
+# text output and the other loads up our data from either googlesheets or csvs
 
-# Load csv with position info
-position_data <- read_csv('positions.csv')
+# Functions for building sections from CSV data
+source('parsing_functions.R') 
+
+# Load data for CV/Resume
+source('gather_data.R')
 ```
+
 
 
 ```{r}
@@ -48,26 +78,24 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](MePic.jpg){width=100%}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
-if(PDF_EXPORT){
-  cat("View this CV online with links at _nickstrayer.me/cv_")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
-}
+# if(PDF_EXPORT){
+#   glue("View this CV online with links at _{CV_HTML_LOC}_")
+# } else {
+#   glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
+# }
 ```
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
-
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+```{r}
+contact_info %>% 
+  glue_data("- <i class='fa fa-{icon}'></i> {contact}")
+```
 
 
 
@@ -75,21 +103,8 @@ Language Skills {#skills}
 --------------------------------------------------------------------------------
 
 ```{r}
-skills <- tribble(
-  ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
-)
-
 build_skill_bars(skills)
 ```
-
-
 
 
 
@@ -98,27 +113,18 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available at [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
-
 Last updated on `r Sys.Date()`.
-
 
 
 
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Granville Matheson {#title}
 --------------------------------------------------------------------------------
 
-
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
-"
-
-cat(sanitize_links(intro_text))
+print_text_block(text_blocks, 'intro')
 ```
 
 
@@ -129,7 +135,11 @@ Education {data-icon=graduation-cap data-concise=true}
 ```{r}
 print_section(position_data, 'education')
 ```
-
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
 
 
 Research Experience {data-icon=laptop}
@@ -141,39 +151,34 @@ print_section(position_data, 'research_positions')
 
 
 
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-I have worked in a variety of roles ranging from journalist to software engineer to data scientist. I like collaborative environments where I can learn from my peers. 
-:::
-
-```{r}
-print_section(position_data, 'industry_positions')
-```
-
-<br>
-<br>
-<br>
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
-I am passionate about education. I believe that no topic is too complex if the teacher is empathetic and willing to think about new methods of approaching task. 
+```{r}
+print_text_block(text_blocks, 'teaching_experience_aside')
+```
 :::
 
 ```{r}
 print_section(position_data, 'teaching_positions')
 ```
 
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
 
 Selected Data Science Writing {data-icon=chart-line}
 --------------------------------------------------------------------------------
 
-
 ::: aside
-I regularly blog about data science and visualization on my blog [LiveFreeOrDichotomize.](https://livefreeordichotomize.com/)
+```{r}
+print_text_block(text_blocks, 'data_science_writing_aside')
+```
 :::
 
 ```{r}
@@ -182,7 +187,7 @@ print_section(position_data, 'data_science_writings')
 
 
 
-Selected Press (About)  {data-icon=newspaper}
+Selected Press  {data-icon=newspaper}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -190,24 +195,33 @@ print_section(position_data, 'about_me_press')
 ```
 
 
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'by_me_press')
-```
+<br>
+<br>
 
 
+<!-- Selected Press (By)  {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ```{r} -->
+<!-- print_section(position_data, 'by_me_press') -->
+<!-- ``` -->
 
 
-Selected Publications, Posters, and Talks {data-icon=book}
+
+Selected Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'academic_articles')
 ```
 
+
+Awards {data-icon=award}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'awards')
+```
 
 
 ```{r}
@@ -227,5 +241,6 @@ Links {data-icon=link}
   })
 }
 ```
+
 
 
