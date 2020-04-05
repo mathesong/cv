@@ -1,3 +1,6 @@
+rmarkdown::render("index.Rmd")
+rmarkdown::render("resume.Rmd")
+
 pagedown::chrome_print("index.html")
 pagedown::chrome_print("resume.html")
 

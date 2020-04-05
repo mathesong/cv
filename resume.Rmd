@@ -116,7 +116,7 @@ See full CV for more complete list of positions and publications.
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
+Made with [**pagedown**](https://github.com/rstudio/pagedown). 
 
 <!-- Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv). -->
 

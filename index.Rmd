@@ -185,7 +185,14 @@ print_text_block(text_blocks, 'data_science_writing_aside')
 print_section(position_data, 'data_science_writings')
 ```
 
-
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
 
 Selected Press  {data-icon=newspaper}
 --------------------------------------------------------------------------------
@@ -195,8 +202,8 @@ print_section(position_data, 'about_me_press')
 ```
 
 
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
 
 <!-- Selected Press (By)  {data-icon=newspaper} -->
@@ -214,6 +221,9 @@ Selected Publications {data-icon=book}
 ```{r}
 print_section(position_data, 'academic_articles')
 ```
+
+<!-- <br> -->
+<!-- <br> -->
 
 
 Awards {data-icon=award}
