@@ -97,23 +97,58 @@ contact_info %>%
   glue_data("- <i class='fa fa-{icon}'></i> {contact}")
 ```
 
-
-
-Language Skills {#skills}
+Technical Skills {#tech-skills}
 --------------------------------------------------------------------------------
 
-```{r}
-build_skill_bars(skills)
-```
+R  STAN  Git  Docker  
+Python  MATLAB  Bash  
+Markdown
+Cloud-Computing  SQL
+APIs  Binder
+`tidyverse` `ggplot2`
+`devtools`
+`brms`  `caret` 
 
 
 
-Disclaimer {#disclaimer}
+<!-- Language Skills {#skills} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ```{r} -->
+<!-- build_skill_bars(skills) -->
+<!-- ``` -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+Open Source Contributions {#open-source}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+I have written and maintain several R packages, available on GitHub:
 
-Last updated on `r Sys.Date()`.
+
+- `kinfitr`: PET pharmacokinetic modelling
+- `rwithings`: Withings Activity API access
+- `relfeas`: Study feasibility assessment
+- `nls.multstart`: Nonlinear least squares regression
+
+
+
+
+
+
+<!-- Disclaimer {#disclaimer} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).  -->
+
+<!-- Last updated on `r Sys.Date()`. -->
 
 
 
@@ -150,6 +185,75 @@ print_section(position_data, 'research_positions')
 ```
 
 
+::: aside
+
+**Competencies**
+
+- R package development
+- Bayesian statistics
+- Multilevel modelling
+- Nonlinear models
+- Statistical inference
+- Version control
+- Reproducibility
+- Measurement & Reliability
+- Data visualisation
+- Machine Learning
+- Natural Language Processing
+- Web-scraping
+- API Usage and Deployment
+:::
+
+
+Selected Data Science Writing {data-icon=chart-line}
+--------------------------------------------------------------------------------
+
+::: aside
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+```{r}
+print_text_block(text_blocks, 'data_science_writing_aside')
+```
+:::
+
+```{r}
+print_section(position_data, 'data_science_writings')
+```
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- Selected Press  {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ```{r} -->
+<!-- print_section(position_data, 'about_me_press') -->
+<!-- ``` -->
+
+
+<!-- <br> -->
+<!-- <br> -->
+
+
+<!-- Selected Press (By)  {data-icon=newspaper} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ```{r} -->
+<!-- print_section(position_data, 'by_me_press') -->
+<!-- ``` -->
 
 
 Teaching Experience {data-icon=chalkboard-teacher}
@@ -172,49 +276,6 @@ print_section(position_data, 'teaching_positions')
 <!-- <br> -->
 
 
-Selected Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-print_text_block(text_blocks, 'data_science_writing_aside')
-```
-:::
-
-```{r}
-print_section(position_data, 'data_science_writings')
-```
-
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
-
-Selected Press  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'about_me_press')
-```
-
-
-<!-- <br> -->
-<!-- <br> -->
-
-
-<!-- Selected Press (By)  {data-icon=newspaper} -->
-<!-- -------------------------------------------------------------------------------- -->
-
-<!-- ```{r} -->
-<!-- print_section(position_data, 'by_me_press') -->
-<!-- ``` -->
-
-
-
 Selected Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
@@ -226,12 +287,15 @@ print_section(position_data, 'academic_articles')
 <!-- <br> -->
 
 
-Awards {data-icon=award}
---------------------------------------------------------------------------------
+<!-- Awards {data-icon=award} -->
+<!-- -------------------------------------------------------------------------------- -->
 
-```{r}
-print_section(position_data, 'awards')
-```
+<!-- ```{r} -->
+<!-- print_section(position_data, 'awards') -->
+<!-- ``` -->
+
+
+
 
 
 ```{r}
