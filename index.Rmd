@@ -100,14 +100,14 @@ contact_info %>%
 Technical Skills {#tech-skills}
 --------------------------------------------------------------------------------
 
-R  STAN  Git  Docker  
-Python  MATLAB  Bash  
-Markdown
-Cloud-Computing  SQL
-APIs  Binder
-`tidyverse` `ggplot2`
-`devtools`
-`brms`  `caret` 
+&#9679; R  &#9679; STAN  &#9679; Git  &#9679; Docker  
+&#9679; Python  &#9679; MATLAB  &#9679; Bash  
+&#9679; Markdown
+&#9679; Cloud-Computing  &#9679; SQL
+&#9679; APIs  &#9679; Binder <br/>
+&#9679; `tidyverse`  &#9679; `ggplot2` <br/>
+&#9679; `devtools`
+&#9679; `brms`  &#9679; `caret` 
 
 
 
@@ -189,19 +189,21 @@ print_section(position_data, 'research_positions')
 
 **Competencies**
 
-- R package development
-- Bayesian statistics
-- Multilevel modelling
-- Nonlinear models
-- Statistical inference
-- Version control
-- Reproducibility
-- Measurement & Reliability
-- Data visualisation
-- Machine Learning
-- Natural Language Processing
-- Web-scraping
-- API Usage and Deployment
+&#9679; R package development <br/>
+&#9679; Statistical inference <br/>
+&#9679; Nonlinear models <br/>
+&#9679; Bayesian statistics <br/>
+&#9679; Multilevel modelling <br/>
+&#9679; Version control <br/>
+&#9679; Reproducibility <br/>
+&#9679; Measurement & Reliability <br/>
+&#9679; Data visualisation <br/>
+&#9679; Machine Learning <br/>
+&#9679; Simulation <br/>
+&#9679; API Queries & Deployment <br/>
+&#9679; Natural Language Processing <br/>
+&#9679; Web-scraping <br/>
+
 :::
 
 
